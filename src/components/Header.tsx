@@ -30,8 +30,8 @@ const Header = () => {
         <div className="w-auto flex flex-row justify-start items-center">
           <Link href="/">
             <div className="cursor-pointer flex flex-row justify-start items-center hover:opacity-80">
-              <span className="sr-only">Memos</span>
-              <img src="/full-logo-landscape.png" className="h-9 sm:h-10 w-auto mr-2" alt="" />
+              <span className="sr-only">SQL Editor</span>
+              <img src="/logo-full.png" className="h-9 sm:h-10 w-auto mr-2" alt="" />
             </div>
           </Link>
         </div>
@@ -41,13 +41,13 @@ const Header = () => {
               Docs
             </Link>
             <span className="font-mono text-gray-300">/</span>
-            <Link className="w-auto flex flex-row justify-center items-center hover:underline hover:text-teal-600" href="/blog">
+            {/* <Link className="w-auto flex flex-row justify-center items-center hover:underline hover:text-teal-600" href="/blog">
               Blog
             </Link>
-            <span className="font-mono text-gray-300">/</span>
+            <span className="font-mono text-gray-300">/</span> */}
             <Link
               className="w-auto flex flex-row justify-center items-center hover:underline hover:text-teal-600"
-              href="https://github.com/usememos/memos"
+              href="https://github.com/bytebase/bytebase"
               target="_blank"
             >
               <span className="hidden sm:block">GitHub</span>
@@ -77,16 +77,16 @@ const HeaderMobileMenu = () => {
             Docs
           </Link>
         </DropdownMenuItem>
-        <DropdownMenuItem>
+        {/* <DropdownMenuItem>
           <Link className="w-full" href="/blog" onClick={() => setOpen(false)}>
             Blog
           </Link>
-        </DropdownMenuItem>
+        </DropdownMenuItem> */}
         <DropdownMenuSeparator className="bg-zinc-100" />
         <DropdownMenuItem>
           <Link
             className="w-full flex flex-row justify-start items-center"
-            href="https://github.com/usememos/memos"
+            href="https://github.com/bytebase/bytebase"
             target="_blank"
             onClick={() => setOpen(false)}
           >

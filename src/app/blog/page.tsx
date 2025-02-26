@@ -45,7 +45,7 @@ const Page = () => {
   );
 };
 
-export const metadata = getMetadata({ title: "Blog - Memos", pathname: "/blog" });
+export const metadata = getMetadata({ title: "Blog - SQL Editor", pathname: "/blog" });
 
 const getBlogFrontmatters = () => {
   const filePaths = getContentFilePaths("blog");

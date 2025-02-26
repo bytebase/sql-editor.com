@@ -7,62 +7,57 @@ export interface FeatureItem {
 
 export const MAIN_FEATURES: FeatureItem[] = [
   {
-    icon: "🏠",
-    slug: "privacy-first",
-    title: "Privacy First",
-    description: "Take control of your data. All runtime data is securely stored in your local database.",
-  },
-  {
-    icon: "✍️",
-    slug: "plain-text",
-    title: "Create at Speed",
-    description: "Save content as plain text for quick access, with Markdown support for fast formatting and easy sharing.",
-  },
-  {
-    icon: "🤲",
-    slug: "lightweight",
-    title: "Lightweight but Powerful",
-    description: "Built with Go, React.js, and a compact architecture, our service delivers powerful performance in a lightweight package.",
-  },
-  {
-    icon: "🧩",
-    slug: "customizable",
-    title: "Customizable",
-    description: "Easily customize your server name, icon, description, system style, and execution scripts to make it uniquely yours.",
-  },
-  {
     icon: "🦦",
     slug: "open-source",
     title: "Open Source",
-    description: "Memos embraces the future of open source, with all code available on GitHub for transparency and collaboration.",
+    description: "All code available on GitHub for transparency and collaboration.",
   },
   {
-    icon: "💸",
-    slug: "free-to-use",
-    title: "Free to Use",
-    description: "Enjoy all features completely free, with no charges ever for any content",
+    icon: "🪶",
+    slug: "lightweight",
+    title: "Lightweight",
+    description: "Single docker container, no dependencies. No need to install any client software.",
+  },
+  {
+    icon: "🤝",
+    slug: "multi-user",
+    title: "Multi-user",
+    description: "Multi-user mode with fine-grained access control.",
+  },
+  {
+    icon: "🤖",
+    slug: "ai-powered",
+    title: "AI-powered",
+    description: "AI assistant to help you write SQL queries, explain queries, and more.",
+  },
+  {
+    icon: "🏛️",
+    slug: "governed",
+    title: "Governed",
+    description: "Fine-grained access control, dynamic data masking, and audit logging.",
+  },
+  {
+    icon: "🧩",
+    slug: "embeddable",
+    title: "Embeddable",
+    description: "Can be embedded into any website or application.",
   },
 ];
 
 const SUB_FEATURES: FeatureItem[] = [
   {
     icon: "🌟",
-    title: "37K+",
+    title: "12,000+",
     description: "GitHub Stars",
   },
   {
-    icon: "👥",
-    title: "270+",
-    description: "Contributors",
-  },
-  {
     icon: "📈",
-    title: "4.6M+",
+    title: "3,000,000+",
     description: "Docker Pulls",
   },
   {
     icon: "📦",
-    title: "70+",
+    title: "Bi-weekly for 4 years",
     description: "Releases",
   },
 ];
@@ -70,9 +65,6 @@ const SUB_FEATURES: FeatureItem[] = [
 const FeatureMetrix = () => {
   return (
     <>
-      <p className="w-full text-start mt-20 mb-4 sm:px-12 text-3xl sm:text-5xl font-serif font-medium text-gray-500">
-        The pain-less way to create meaningful notes.
-      </p>
       <div className="w-full mb-8 mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 sm:px-12">
         {MAIN_FEATURES.map((featureItem) => (
           <div key={featureItem.title} className="w-full flex flex-col justify-start items-start rounded-2xl">
@@ -85,7 +77,7 @@ const FeatureMetrix = () => {
         ))}
       </div>
       <div className="w-full mt-12 sm:px-12">
-        <div className="w-full bg-teal-50 border-2 border-teal-600 shadow-sm rounded-xl p-4 sm:p-6 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        <div className="w-full bg-teal-50 border-2 border-teal-600 shadow-sm rounded-xl p-4 sm:p-6 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           {SUB_FEATURES.map((featureItem) => (
             <div key={featureItem.title} className="w-full flex flex-row justify-start items-center gap-4">
               <span className="text-3xl sm:text-5xl">{featureItem.icon}</span>

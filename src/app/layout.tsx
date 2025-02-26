@@ -13,7 +13,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="en" className={fontLoader()}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
-        <link rel="icon" href="/logo-rounded.png" type="image/png" />
+        <link rel="icon" href="/logo.png" type="image/png" />
       </head>
       <body>
         <div className="relative w-full min-h-[100svh] flex flex-col bg-white">

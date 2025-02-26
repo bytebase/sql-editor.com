@@ -33,7 +33,7 @@ export const generateMetadata = async (props: Props): Promise<Metadata> => {
   const params = await props.params;
   const feature = MAIN_FEATURES.find((feature) => feature.slug === params.slug) as FeatureItem;
   return getMetadata({
-    title: feature.title + " - Memos",
+    title: feature.title + " - SQL Editor",
     description: feature.description,
     pathname: `/feature/${feature.slug}`,
   });

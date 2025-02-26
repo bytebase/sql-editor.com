@@ -8,12 +8,12 @@ interface LocalMetadata {
 }
 
 export const getMetadata = (metadata: Partial<LocalMetadata>): Metadata => {
-  const title = metadata.title || "Memos - Open Source, Self-hosted, Your Notes, Your Way";
+  const title = metadata.title || "SQL Editor - Open Source, Online, Self-hosted";
   const description =
     metadata.description ||
     "A privacy-first, lightweight note-taking solution that allows you to effortlessly capture and share your ideas.";
   const url = metadata.pathname || "";
-  const imagePath = metadata.imagePath || "/logo-rounded.png";
+  const imagePath = metadata.imagePath || "/logo.png";
   const hasFeatureImage = !!metadata.imagePath;
 
   return {
@@ -27,16 +27,16 @@ export const getMetadata = (metadata: Partial<LocalMetadata>): Metadata => {
       images: [
         {
           url: imagePath,
-          alt: "Memos",
+          alt: "SQL Editor",
         },
       ],
     },
     twitter: {
       card: hasFeatureImage ? "summary_large_image" : "summary",
     },
-    metadataBase: new URL("https://www.usememos.com"),
+    metadataBase: new URL("https://www.sql-editor.com"),
     icons: {
-      icon: "/logo-rounded.png",
+      icon: "/logo.png",
       apple: [
         { url: "/favicon/favicon.png" },
         { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },

@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import React from "react";
 import ContentRender from "@/components/ContentRender";
 import SectionContainer from "@/components/SectionContainer";
-import Subscription from "@/components/Subscription";
 import { getContentFilePaths, getFilePathFromSlugs, readFileContenxt } from "@/lib/content";
 import { markdoc } from "@/markdoc/markdoc";
 import { getMetadata } from "@/utils/metadata";
@@ -28,8 +27,6 @@ const Page = async (props: Props) => {
       <div className="w-full mx-auto sm:px-4">
         <h1 className="w-full text-3xl sm:text-5xl font-medium sm:font-bold my-6">{frontmatter.title}</h1>
         <ContentRender markdocNode={transformedContent} />
-        <Divider className="my-12!" />
-        <Subscription />
       </div>
     </SectionContainer>
   );
@@ -45,7 +42,7 @@ export const generateMetadata = async (props: Props): Promise<Metadata> => {
 
   const { frontmatter } = markdoc(content);
   return getMetadata({
-    title: frontmatter.title + " - Memos",
+    title: frontmatter.title + " - SQL Editor",
     pathname: params.slug?.length > 0 ? `/changelog/${params.slug.join("/")}` : "/changelog",
   });
 };

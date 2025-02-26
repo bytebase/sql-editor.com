@@ -23,8 +23,8 @@ const DemoPlaceholder = () => {
           </Link>
         </div>
       </SectionContainer>
-      <div className="relative w-full sm:max-w-7xl mx-auto overflow-auto">
-        <img className="block w-[200vw] max-w-none sm:w-full h-auto" src="/demo.png" alt="demo-screenshot" />
+      <div className="relative w-full sm:max-w-7xl mx-auto overflow-auto mt-16">
+        <img className="block w-[200vw] max-w-none sm:w-full h-auto" src="/sql-editor.webp" alt="demo-screenshot" />
       </div>
     </div>
   );

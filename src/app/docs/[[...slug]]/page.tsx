@@ -1,5 +1,5 @@
 import { Tag } from "@markdoc/markdoc";
-import { Button, Divider } from "@mui/joy";
+import { Button } from "@mui/joy";
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -7,7 +7,6 @@ import React from "react";
 import ContentRender from "@/components/ContentRender";
 import Icon from "@/components/Icon";
 import SectionContainer from "@/components/SectionContainer";
-import Subscription from "@/components/Subscription";
 import TableOfContent from "@/components/TableOfContent";
 import { GITHUB_REPO_LINK } from "@/consts/common";
 import { getContentFilePaths, getFilePathFromSlugs, readFileContenxt } from "@/lib/content";
@@ -63,8 +62,6 @@ const Page = async (props: Props) => {
               </Link>
             </Button>
           </div>
-          <Divider className="my-12!" />
-          <Subscription />
         </div>
         <div className="hidden lg:block sticky top-24 h-[calc(100svh-6rem)] w-40 shrink-0">
           <div className="relative w-full h-full overflow-auto py-4 no-scrollbar">
@@ -88,7 +85,7 @@ export const generateMetadata = async (props: Props): Promise<Metadata> => {
 
   const { frontmatter } = markdoc(content);
   return getMetadata({
-    title: frontmatter.title + " - Memos",
+    title: frontmatter.title + " - SQL Editor",
     pathname: params.slug?.length > 0 ? `/docs/${params.slug.join("/")}` : "/docs",
   });
 };
