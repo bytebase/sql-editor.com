@@ -1,4 +1,3 @@
-import { Divider } from "@mui/joy";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import React from "react";
