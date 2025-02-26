@@ -1,5 +1,5 @@
-import PlausibleProvider from "next-plausible";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import PlausibleProvider from "next-plausible";
 import type React from "react";
 import { Suspense } from "react";
 import Footer from "@/components/Footer";
