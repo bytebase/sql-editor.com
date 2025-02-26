@@ -1,3 +1,4 @@
+import PlausibleProvider from "next-plausible";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type React from "react";
 import { Suspense } from "react";
@@ -7,7 +8,6 @@ import { PostHogPageview } from "@/components/PosthogProvider";
 import "@/styles/global.css";
 import { getMetadata } from "@/utils/metadata";
 import { fontLoader } from "./fonts";
-import PlausibleProvider from 'next-plausible'
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
