@@ -14,34 +14,28 @@ const Page = () => {
       <div className="w-full mx-auto py-2 sm:px-4 flex flex-col justify-start items-start">
         <h2 className="w-full text-start text-5xl sm:text-6xl font-medium sm:font-bold mt-4">Blogs</h2>
         <h3 className="text-xl mt-4 leading-normal text-gray-500">Get the latest articles from SQL Editor</h3>
-        <div className="mt-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+        <div className="mt-6 w-full grid grid-cols-1 gap-4 sm:gap-6">
           {frontmatters.map((frontmatter) => {
             return (
               <React.Fragment key={frontmatter.slug}>
-                <div className="w-full bg-white p-4 border rounded-2xl flex flex-row justify-start items-start gap-x-4 hover:shadow-sm">
-                  <div className="flex flex-1 flex-col sm:p-2 justify-start items-start">
+                <Link href={`/blog/${frontmatter.slug}`} className="block w-full">
+                  <div className="w-full bg-white p-4 border rounded-2xl flex flex-row justify-start items-start gap-x-4 hover:shadow-sm">
+                    <div className="flex flex-1 flex-col sm:p-2 justify-start items-start">
+                      {frontmatter.feature_image && (
+                        <div className="w-full sm:hidden mb-4 shrink-0 rounded-lg overflow-clip">
+                          <img src={frontmatter.feature_image} alt="" />
+                        </div>
+                      )}
+                      <div className="text-lg leading-tight! sm:text-xl line-clamp-2 hover:text-teal-600">{frontmatter.title}</div>
+                      {frontmatter.description && <p className="mt-2 text-gray-400 line-clamp-3 leading-snug">{frontmatter.description}</p>}
+                    </div>
                     {frontmatter.feature_image && (
-                      <Link
-                        className="w-full sm:hidden mb-4 shrink-0 rounded-lg overflow-clip hover:opacity-80 hover:shadow-sm"
-                        href={`/blog/${frontmatter.slug}`}
-                      >
-                        <img src={frontmatter.feature_image} alt="" />
-                      </Link>
+                      <div className="hidden sm:block shrink-0 rounded-lg overflow-clip">
+                        <img className="w-60" src={frontmatter.feature_image} alt="" />
+                      </div>
                     )}
-                    <Link className="text-lg leading-tight! sm:text-xl line-clamp-2 hover:text-teal-600" href={`/blog/${frontmatter.slug}`}>
-                      {frontmatter.title}
-                    </Link>
-                    {frontmatter.description && <p className="mt-2 text-gray-400 line-clamp-3 leading-snug">{frontmatter.description}</p>}
                   </div>
-                  {frontmatter.feature_image && (
-                    <Link
-                      className="hidden sm:block shrink-0 rounded-lg overflow-clip hover:opacity-80 hover:shadow-sm"
-                      href={`/blog/${frontmatter.slug}`}
-                    >
-                      <img className="w-60" src={frontmatter.feature_image} alt="" />
-                    </Link>
-                  )}
-                </div>
+                </Link>
               </React.Fragment>
             );
           })}
