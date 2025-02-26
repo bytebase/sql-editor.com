@@ -15,7 +15,7 @@ const DemoPlaceholder = () => {
           </Link>
           <Link
             className="w-32 py-2 rounded-md flex flex-row justify-center items-center hover:bg-teal-50 hover:text-teal-800"
-            href="https://demo.usememos.com/"
+            href="https://demo.sql-editor.com/"
             target="_blank"
           >
             Live Demo
