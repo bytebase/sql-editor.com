@@ -2,7 +2,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import React from "react";
 import SectionContainer from "@/components/SectionContainer";
-import Subscription from "@/components/Subscription";
 import { getContentFilePaths, getFilePathFromSlugs, readFileContenxt } from "@/lib/content";
 import { markdoc } from "@/markdoc/markdoc";
 import { getMetadata } from "@/utils/metadata";
@@ -14,7 +13,7 @@ const Page = () => {
     <SectionContainer>
       <div className="w-full mx-auto py-2 sm:px-4 flex flex-col justify-start items-start">
         <h2 className="w-full text-start text-5xl sm:text-6xl font-medium sm:font-bold mt-4">Blogs</h2>
-        <h3 className="text-xl mt-4 leading-normal text-gray-500">Get the latest articles from Memos</h3>
+        <h3 className="text-xl mt-4 leading-normal text-gray-500">Get the latest articles from SQL Editor</h3>
         <div className="mt-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
           {frontmatters.map((frontmatter) => {
             return (
@@ -47,7 +46,6 @@ const Page = () => {
             );
           })}
         </div>
-        <Subscription className="mt-6" />
       </div>
     </SectionContainer>
   );
