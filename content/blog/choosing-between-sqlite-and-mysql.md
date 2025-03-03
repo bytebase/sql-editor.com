@@ -1,67 +1,30 @@
 ---
-title: "Choosing Between SQLite and MySQL: The Database Dilemma"
-author: Steven
-description: In Memos v0.16.1, we've introduced support for MySQL as an alternative to the previously used SQLite database. This addition expands your choices for managing your data. In this article, we'll discuss the reasons behind our initial choice of SQLite and why we added MySQL support.
-published_at: 2023/10/24 20:24:00
-feature_image: /content/blog/choosing-between-sqlite-and-mysql/banner.png
+title: "SQL Editor Building Blocks"
+author: Tianzhou
+description: List the building blocks of SQL Editor.
+published_at: 2025/03/03 20:20:00
 ---
 
-In Memos v0.16.1, we've introduced support for MySQL as an alternative to the previously used SQLite database. This addition expands your choices for managing your data. In this article, we'll discuss the reasons behind our initial choice of SQLite and why we added MySQL support. We'll also explore the key differences between the two and offer guidance on which one you should choose for your specific needs.
+## Connection Management
 
-## Why We Started with SQLite
+Every database interaction begins with a solid connection, and this is where many SQL clients fall short. A robust connection manager should handle multiple database types seamlessly, store credentials securely (by integrating with external password managers), and offer connection pooling to prevent resource exhaustion. Users need clear feedback when connections fail or time out, with helpful troubleshooting suggestions rather than cryptic error codes.
 
-### Lightweight and Widely Supported
+## Query Editor
 
-At the inception of Memos, we selected SQLite as our primary database due to its lightweight nature and widespread use. SQLite's single-file design allows for easy deployment and integration across various systems. This makes it an excellent choice for applications that prioritize simplicity and compatibility.
+The query editor is the heart of any SQL client, where clarity and responsiveness are paramount. Syntax highlighting should be both accurate and visually comfortable, with support for database-specific syntax variations. Auto-completion needs to balance helpfulness with unobtrusiveness, suggesting tables and columns contextually without constant popups. For complex queries, code folding becomes invaluable, allowing users to collapse sections they're not actively editing. The editor should also handle large queries gracefully, without lagging or consuming excessive resources
 
-### Versatile on Any Machine
+## Query History
 
-SQLite is well-suited for use on diverse hardware and software environments. Its small footprint and low resource requirements mean you can run it on virtually any machine, from resource-constrained devices to high-performance servers.
+A thoughtfully implemented query history feature serves as both safety net and time-saver. Beyond simply recording past queries, it should maintain execution context—which database was targeted, when it ran, how long it took, and whether it succeeded. Searching and filtering history by these attributes helps users quickly locate that critical query from last week. The best implementations also allow organization into favorites or categories and persist history across sessions and devices.
 
-## Presenting MySQL Support
+## Query sharing
 
-After Memos was launched, there were numerous user requests for support for other database types to enable seamless integration with popular cloud database services: [GitHub Issue #163](https://github.com/usememos/memos/issues/163), [GitHub Issue #1816](https://github.com/usememos/memos/issues/1816). With the primary focus being on MySQL support, we also took a moment to highlight its advantages.
+Collaboration capabilities transform a personal tool into a team productivity multiplier. Effective query sharing includes generating shareable links with appropriate access controls, allowing recipients to not just view but fork and modify shared queries.
 
-### Cloud Compatibility
+## Query Result
 
-The addition of MySQL support aligns with the evolving landscape of cloud computing and serverless architectures. MySQL offers seamless integration with cloud databases, allowing you to leverage the scalability and reliability of cloud infrastructure. This is especially beneficial if your application needs to operate in a serverless environment or if you require cloud-based data storage for better redundancy and accessibility.
+Result handling determines whether insights become actionable or remain buried in data. Beyond basic tabular display, result sets should support multiple visualization options—pivot tables, charts, and custom formatting based on data types. For large results, streaming pagination prevents memory issues while allowing users to explore the full dataset. Export capabilities need to maintain data fidelity across formats while handling special characters and complex types
 
-### Improved Performance for Large Datasets
+## AI Assistant
 
-MySQL outperforms SQLite when it comes to handling large datasets and complex queries. If your application deals with substantial volumes of data or demands intricate database operations, MySQL might be the superior choice.
-
-## The Key Differences
-
-### Performance and Scalability
-
-- SQLite: Suitable for lightweight applications and smaller datasets, but can struggle with larger volumes of data.
-- MySQL: Well-suited for larger databases and applications with demanding performance requirements, particularly when hosted in the cloud.
-
-### Cloud Integration
-
-- SQLite: Not inherently designed for cloud environments but can be used with additional configurations.
-- MySQL: Built for cloud compatibility, making it a seamless choice for cloud-based applications.
-
-### Resource Requirements
-
-- SQLite: Minimal resource usage, making it suitable for resource-constrained devices.
-- MySQL: Requires more resources, ideal for applications with substantial computing power and memory available.
-
-### Backup and Redundancy
-
-- SQLite: Backup can be slower and may result in database fragmentation.
-- MySQL: Offers robust backup solutions and better data redundancy.
-
-## How to Choose
-
-When deciding between MySQL and SQLite for Memos, it's essential to consider your specific use case and existing infrastructure. Here's a tailored guideline to help you make the choice:
-
-- If you have a clear understanding of the advantages MySQL can bring to your Memos instance, and you already have the necessary cloud server resources, opting for MySQL is a viable choice.
-
-- Furthermore, you can always use SQLite as your database.
-
----
-
-## References
-
-- [Using MySQL as the Database Driver](/docs/install/database)
+The integration of AI assistants represents the newest frontier in SQL tooling. These features should understand context—the schema structure, query history, and user intent—to provide relevant suggestions. Effective AI assistants help translate natural language questions into SQL, explain query logic in plain English, suggest optimizations for performance issues, and identify potential errors before execution. As these tools evolve, they're increasingly capable of helping users understand not just how to query data, but why certain patterns appear in results.

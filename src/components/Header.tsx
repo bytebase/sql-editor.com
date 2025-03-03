@@ -41,10 +41,10 @@ const Header = () => {
               Docs
             </Link>
             <span className="font-mono text-gray-300">/</span>
-            {/* <Link className="w-auto flex flex-row justify-center items-center hover:underline hover:text-teal-600" href="/blog">
+            <Link className="w-auto flex flex-row justify-center items-center hover:underline hover:text-teal-600" href="/blog">
               Blog
             </Link>
-            <span className="font-mono text-gray-300">/</span> */}
+            <span className="font-mono text-gray-300">/</span>
             <Link
               className="w-auto flex flex-row justify-center items-center hover:underline hover:text-teal-600"
               href="https://github.com/bytebase/bytebase"
@@ -77,11 +77,11 @@ const HeaderMobileMenu = () => {
             Docs
           </Link>
         </DropdownMenuItem>
-        {/* <DropdownMenuItem>
+        <DropdownMenuItem>
           <Link className="w-full" href="/blog" onClick={() => setOpen(false)}>
             Blog
           </Link>
-        </DropdownMenuItem> */}
+        </DropdownMenuItem>
         <DropdownMenuSeparator className="bg-zinc-100" />
         <DropdownMenuItem>
           <Link
