@@ -3,18 +3,33 @@
 import clsx from "clsx";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { BsGithub } from "react-icons/bs";
+import { BsGithub, BsStar } from "react-icons/bs";
 import Banner from "./Banner";
 import Icon from "./Icon";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "./kit/DropdownMenu";
 
 const Header = () => {
   const [pageScrolled, setPageScrolled] = useState(false);
+  const [starCount, setStarCount] = useState<number | null>(null);
 
   useEffect(() => {
     document.addEventListener("scroll", () => {
       setPageScrolled(window.scrollY > 0);
     });
+  }, []);
+
+  useEffect(() => {
+    const fetchStarCount = async () => {
+      try {
+        const response = await fetch('https://api.github.com/repos/bytebase/bytebase');
+        const data = await response.json();
+        setStarCount(data.stargazers_count);
+      } catch (error) {
+        console.error('Error fetching GitHub stars:', error);
+      }
+    };
+
+    fetchStarCount();
   }, []);
 
   return (
@@ -52,6 +67,12 @@ const Header = () => {
             >
               <span className="hidden sm:block">GitHub</span>
               <BsGithub className="w-5 h-auto ml-1" />
+              {starCount !== null && (
+                <div className="flex items-center ml-2 bg-gray-100 rounded-full px-2 py-0.5 text-xs">
+                  <BsStar className="w-3 h-auto mr-1 text-yellow-500" />
+                  <span>{starCount.toLocaleString()}</span>
+                </div>
+              )}
             </Link>
           </div>
           <div className="sm:hidden">
@@ -65,6 +86,21 @@ const Header = () => {
 
 const HeaderMobileMenu = () => {
   const [open, setOpen] = useState(false);
+  const [starCount, setStarCount] = useState<number | null>(null);
+
+  useEffect(() => {
+    const fetchStarCount = async () => {
+      try {
+        const response = await fetch('https://api.github.com/repos/bytebase/bytebase');
+        const data = await response.json();
+        setStarCount(data.stargazers_count);
+      } catch (error) {
+        console.error('Error fetching GitHub stars:', error);
+      }
+    };
+
+    fetchStarCount();
+  }, []);
 
   return (
     <DropdownMenu open={open} onOpenChange={setOpen}>
@@ -91,6 +127,12 @@ const HeaderMobileMenu = () => {
             onClick={() => setOpen(false)}
           >
             <BsGithub className="w-5 h-auto mr-1 -mt-0.5" /> GitHub
+            {starCount !== null && (
+              <div className="flex items-center ml-2 bg-gray-100 rounded-full px-2 py-0.5 text-xs">
+                <BsStar className="w-3 h-auto mr-1 text-yellow-500" />
+                <span>{starCount.toLocaleString()}</span>
+              </div>
+            )}
           </Link>
         </DropdownMenuItem>
       </DropdownMenuContent>
