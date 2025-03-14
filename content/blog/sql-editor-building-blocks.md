@@ -5,6 +5,8 @@ description: List the building blocks of SQL Editor.
 published_at: 2025/03/03 20:20:00
 ---
 
+> This post distills our accumulated experience building SQL editor into essential components.
+
 ## Connection Management
 
 Every database interaction begins with a solid connection, and this is where many SQL clients fall short. A robust connection manager should handle multiple database types seamlessly, store credentials securely (by integrating with external password managers), and offer connection pooling to prevent resource exhaustion. Users need clear feedback when connections fail or time out, with helpful troubleshooting suggestions rather than cryptic error codes.
