@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { VERSION } from "@/consts/common";
 
 export const getBlogSlugList = (): string[] => {
   const contentSlugList: string[] = [];
@@ -50,7 +51,11 @@ export const getFilePathFromSlugs = (base: "docs" | "blog" | "changelog" | "lega
 
 export const readFileContenxt = (filePath: string) => {
   try {
-    const content = fs.readFileSync(path.resolve("./", filePath), "utf8");
+    let content = fs.readFileSync(path.resolve("./", filePath), "utf8");
+    
+    // Replace version placeholders
+    content = content.replace(/\{\{VERSION\}\}/g, VERSION);
+    
     return content;
   } catch (error) {
     return null;

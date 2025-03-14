@@ -1,6 +1,6 @@
 {
-  "name": "dotcom",
-  "version": "1.0.0",
+  "name": "sql-editor.com",
+  "version": "3.5.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

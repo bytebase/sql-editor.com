@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import Icon from "./Icon";
+import { VERSION, RELEASE_DATE } from "@/consts/common";
 
 const LatestVersion = () => {
-  const latestVersion = "3.4.0 (Feb 13, 2025)";
+  const latestVersion = `${VERSION} (${RELEASE_DATE})`;
 
   return (
     <Link

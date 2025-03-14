@@ -22,7 +22,7 @@ docker run --rm --init \
  --name bytebase \
  --publish 8080:8080 --pull always \
  --volume ~/.bytebase/data:/var/opt/bytebase \
- bytebase/bytebase:3.4.0
+ bytebase/bytebase:{{VERSION}}
 ```
 
 Once you see the Bytebase logo, you can access the console at http://localhost:8080.
@@ -35,7 +35,7 @@ Once you see the Bytebase logo, you can access the console at http://localhost:8
 ██████╔╝   ██║      ██║   ███████╗██████╔╝██║  ██║███████║███████╗
 ╚═════╝    ╚═╝      ╚═╝   ╚══════╝╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝
 
-Version 3.4.0 has started on port 8080 🚀
+Version {{VERSION}} has started on port 8080 🚀
 ```
 
 Then in the setup wizard, after you create the admin account, select `SQL Editor Mode` to start using SQL Editor.
