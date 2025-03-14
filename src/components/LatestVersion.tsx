@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import Icon from "./Icon";
 import { VERSION, RELEASE_DATE } from "@/consts/common";
+import Icon from "./Icon";
 
 const LatestVersion = () => {
   const latestVersion = `${VERSION} (${RELEASE_DATE})`;

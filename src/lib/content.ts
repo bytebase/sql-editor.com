@@ -52,10 +52,8 @@ export const getFilePathFromSlugs = (base: "docs" | "blog" | "changelog" | "lega
 export const readFileContenxt = (filePath: string) => {
   try {
     let content = fs.readFileSync(path.resolve("./", filePath), "utf8");
-    
     // Replace version placeholders
     content = content.replace(/\{\{VERSION\}\}/g, VERSION);
-    
     return content;
   } catch (error) {
     return null;

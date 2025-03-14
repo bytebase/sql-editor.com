@@ -21,11 +21,11 @@ const Header = () => {
   useEffect(() => {
     const fetchStarCount = async () => {
       try {
-        const response = await fetch('https://api.github.com/repos/bytebase/bytebase');
+        const response = await fetch("https://api.github.com/repos/bytebase/bytebase");
         const data = await response.json();
         setStarCount(data.stargazers_count);
       } catch (error) {
-        console.error('Error fetching GitHub stars:', error);
+        console.error("Error fetching GitHub stars:", error);
       }
     };
 
@@ -91,11 +91,11 @@ const HeaderMobileMenu = () => {
   useEffect(() => {
     const fetchStarCount = async () => {
       try {
-        const response = await fetch('https://api.github.com/repos/bytebase/bytebase');
+        const response = await fetch("https://api.github.com/repos/bytebase/bytebase");
         const data = await response.json();
         setStarCount(data.stargazers_count);
       } catch (error) {
-        console.error('Error fetching GitHub stars:', error);
+        console.error("Error fetching GitHub stars:", error);
       }
     };
 
